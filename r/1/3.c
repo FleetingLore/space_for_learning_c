@@ -1,7 +1,9 @@
 // 题目 2
 
-// 本期贷款权重
+/* 本期贷款权重 */
 #define CURRENT_LOAN_WEIGHT 0.6
+
+#include <stdio.h>
 
 /**
  * 例某项目建设期为 2 年，第一年贷款为 3000 万元，
@@ -17,16 +19,20 @@ int main() {
     const float const_3 = 0.08; // 年利率
 
     /**
-     * 建设期利息 = (第一年贷款 × 本期贷款权重 + 第二年贷款 × 本期贷款权重) × 年利率
+     * 利息 = (前一期所有贷款和利息 + 1/2 x 本期贷款) x 年利率
      */
 
-    /* 建设期利息 */
+    /* 第一年利息 */
     const float target_1 = (
-        const_1 * CURRENT_LOAN_WEIGHT
-         + const_2 * CURRENT_LOAN_WEIGHT
+        const_1 + const_2 * CURRENT_LOAN_WEIGHT
     ) * const_3;
-    printf("建设期利息: %.2f 万元\n", target_1);
 
-    /* 返回 */
+    /* 第二年利息 */
+    const float target_2 = (
+        const_1 + target_1 + const_2 * CURRENT_LOAN_WEIGHT
+    ) * const_3;
+    printf("建设期利息: %.2f 万元\n", target_2);
+
+    // 返回
     return 0;
 }
