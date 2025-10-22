@@ -13,6 +13,7 @@ int main() {
 }
 
 /* 之前的有错的程序
+```c
 #include <stdio.h>
 
 int main() {
@@ -26,5 +27,6 @@ int main() {
     
     return 0;
 }
-
+    
+```
 */
