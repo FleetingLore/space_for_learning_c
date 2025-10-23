@@ -24,12 +24,12 @@ int main() {
 
     /* 第一年利息 */
     const float target_1 = (
-        const_1 + const_2 * CURRENT_LOAN_WEIGHT
+        const_1 * CURRENT_LOAN_WEIGHT
     ) * const_3;
 
     /* 第二年利息 */
     const float target_2 = (
-        const_1 + target_1 + const_2 * CURRENT_LOAN_WEIGHT
+        target_1 + const_2 * CURRENT_LOAN_WEIGHT
     ) * const_3;
     printf("建设期利息: %.2f 万元\n", target_2);
 
