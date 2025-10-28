@@ -1,37 +1,32 @@
-// 题目 2
-
-/* 本期贷款权重 */
-#define CURRENT_LOAN_WEIGHT 0.6
+// 题目 1
 
 #include <stdio.h>
 
-/**
- * 例某项目建设期为 2 年，第一年贷款为 3000 万元，
- * 第二年贷款为 2000 万元，贷款年内均衡发放，年利率为
- * 8%，建筑期内只记息不付息，请计算建设期内的利息。
- */
 int main() {
     // 单位: 万元
-    const float const_1 = 3000.0; // 第一年贷款
-    const float const_2 = 2000.0; // 第二年贷款
+    const float const_1 = 5000; // 建设项目工程费用
+    const float const_2 = 1000; // 工程建设其他费用
+    const float const_3 = 5000; // 计划完成每年投资
 
     // 百分比
-    const float const_3 = 0.08; // 年利率
+    const float const_4 = 0.08; // 基本预备率
+    const float const_5 = 0.05; // 年均投资价格上涨率
+
+    // 单位: 年
+    const float const_6 = 2; // 建设期
 
     /**
-     * 利息 = (前一期所有贷款和利息 + 1/2 x 本期贷款) x 年利率
+     * 总费用 = (建设项目工程费用 + 建设其他费用) \times
+     *  (1 + 基本预备费率)
      */
+    const float target_1 = (const_1 + const_2) * (1 + const_4);
 
-    /* 第一年利息 */
-    const float target_1 = (
-        const_1 * CURRENT_LOAN_WEIGHT
-    ) * const_3;
-
-    /* 第二年利息 */
-    const float target_2 = (
-        target_1 + const_2 * CURRENT_LOAN_WEIGHT
-    ) * const_3;
-    printf("建设期利息: %.2f 万元\n", target_2);
+    /**
+     * 第二年差预备费 = 总费用 \times 计划每年完成投资
+     * \times (1 + 年均投资价格上涨率 5\%)
+     */
+    const flaot target_2 = target_1 * const_3 * (1 + const_5);
+    printf("%f", target_2);
 
     // 返回
     return 0;
