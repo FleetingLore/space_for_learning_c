@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main() {
-    printf("This is a C programme.\n");
+    printf("Hello C.\n");
     return 0;
 }
