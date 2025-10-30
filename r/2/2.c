@@ -20,11 +20,10 @@ main() {
         &y
     );
     scanf(
-        "%c%c",
+        "c1 = %c, c2 = %c",
         &c1,
         &c2
     );
->>>>>>> a744af5662c74d3f366cc10156f40ad4216b8c79
 
     printf(
         "a = %d, b = %d\n",
