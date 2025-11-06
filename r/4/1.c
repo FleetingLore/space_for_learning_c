@@ -30,20 +30,20 @@ f_1_pop() {
     return -1;
 }
 
-/* fn */ int
-const f_2_isEmpty() {
+const /* fn */ int
+f_2_is_empty() {
     return global_unsafe_mut_top == -1;
 }
 
 const /* fn */ int
 f_3_f(int n) {
-    if (n == 0) return THE_ZERO;
-    if (n == 1) return THE_FIRST;
+    if (n == 0) { return THE_ZERO; }
+    if (n == 1) { return THE_FIRST; } 
     
     f_0_push(n);
     int _result = 0;
     
-    while (!f_2_isEmpty()) {
+    while (!f_2_is_empty()) {
         int _current = f_1_pop();
         
         if (_current == 0) {
@@ -73,7 +73,7 @@ f_5_input_int() {
     return _mut_once_n;
 }
 
-/* entry */
+/* #[entry] */
 /* fn */ int
 main() {
     int _n = f_5_input_int();
